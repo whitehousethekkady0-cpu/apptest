@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevFlow — Deploy with Confidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">Dev<span>Flow</span></div>
+    <ul class="nav-links">
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://github.com" class="btn-nav" target="_blank">GitHub ↗</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-tag">CI/CD READY</div>
+    <h1 class="hero-title">Ship code.<br /><em>Not bugs.</em></h1>
+    <p class="hero-sub">
+      A production-grade web project wired for GitHub Actions —<br />
+      lint, test, build, and deploy on every push.
+    </p>
+    <div class="hero-ctas">
+      <a href="#pipeline" class="btn-primary">See the pipeline</a>
+      <a href="https://github.com" class="btn-ghost" target="_blank">View on GitHub</a>
+    </div>
+    <div class="hero-badge">
+      <span class="dot"></span> Test environment live
+    </div>
+  </header>
+
+  <!-- PIPELINE SECTION -->
+  <section class="section" id="pipeline">
+    <div class="section-label">HOW IT WORKS</div>
+    <h2 class="section-title">Your pipeline, visualised</h2>
+    <div class="pipeline">
+      <div class="pipe-step" data-step="01">
+        <div class="pipe-icon">⬆</div>
+        <h3>Push</h3>
+        <p>You push to <code>main</code> or open a pull request. GitHub detects the event and triggers the workflow.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" data-step="02">
+        <div class="pipe-icon">✦</div>
+        <h3>Lint</h3>
+        <p>Code style is checked. Catches formatting errors and bad patterns before they reach production.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" data-step="03">
+        <div class="pipe-icon">◎</div>
+        <h3>Test</h3>
+        <p>Automated tests run. If any test fails, the pipeline stops and you get notified immediately.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step" data-step="04">
+        <div class="pipe-icon">⬡</div>
+        <h3>Build</h3>
+        <p>The project is compiled or bundled. Only a clean build proceeds to deployment.</p>
+      </div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step active" data-step="05">
+        <div class="pipe-icon">⚡</div>
+        <h3>Deploy</h3>
+        <p>On success, the app is automatically deployed to the test environment. Zero manual steps.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section alt" id="features">
+    <div class="section-label">FEATURES</div>
+    <h2 class="section-title">Everything you need to start</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-num">01</div>
+        <h3>GitHub Actions ready</h3>
+        <p>A complete <code>.github/workflows/ci.yml</code> included. Works out of the box on any GitHub repo.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">02</div>
+        <h3>Automated tests</h3>
+        <p>A sample test suite using plain JS. Add your own tests and they'll run automatically on every push.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">03</div>
+        <h3>Lint configured</h3>
+        <p>ESLint is set up with sensible defaults. Code quality is checked before anything else runs.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">04</div>
+        <h3>Environment separation</h3>
+        <p>Deploy only on <code>main</code> branch pushes. PRs run lint and tests only — no accidental deploys.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">05</div>
+        <h3>Clean project structure</h3>
+        <p>Organised <code>src/</code> folder, separate CSS and JS, and a <code>tests/</code> directory from day one.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-num">06</div>
+        <h3>Beginner friendly</h3>
+        <p>Every file is commented. Built to learn from — understand CI/CD by reading real working code.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-label">CONTACT</div>
+    <h2 class="section-title">Get in touch</h2>
+    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send message →</button>
+      <p id="form-status" class="form-status"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">Dev<span>Flow</span></div>
+    <p>Built to learn CI/CD with GitHub Actions.</p>
+    <p class="footer-small">Push. Test. Deploy. Repeat.</p>
+  </footer>
+
+  <script src="src/js/main.js"></script>
+</body>
+</html>
